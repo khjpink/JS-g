@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        // 랜덤 숫자 생성 함수
+        function generateRandomNumber(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+        //랜덤 배열
+        let randomArr = []
+        
+        while(randomArr.length< 10){
+            //1부터100사이의 랜덤숫자 10개 생성
+            let randomNum = generateRandomNumber(1,100);
+            // 중복검사 
+            // includes: 배열이나 문자열에 특정 요소가 포함되어있는지 확인 
+            if(!randomArr.includes(randomNum)){
+                randomArr.push(randomNum);
+            }
+        }
+        
+        let sortedArr = randomArr.sort(function(a,b){
+            return a-b;
+        });
+
+        
+        //가장큰수, 가장작은수 담기
+        let minNum = sortedArr[0];
+        let maxNum = sortedArr[sortedArr.length -1];
+        
+        //출력
+        console.log("랜덤수는 : "+sortedArr);
+        console.log("랜덤수 개수는 : "+sortedArr.length);
+        console.log(`가장작은수는 ${minNum}이고, 가장큰수는 ${maxNum} 입니다.`);
+    
+
+    </script>
+</body>
+</html>

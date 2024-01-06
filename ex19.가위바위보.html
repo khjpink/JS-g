@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 400px;
+            height: 400px;
+            border: 5px solid black;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .box-img{
+            width: 150px;
+            height: 150px;
+        }
+
+        #result-me, #result-computer{
+            font-size: 2em;
+        }
+
+        .container>button {
+            margin-top: 10px;
+        }
+
+        .box.win {
+            border: 3px solid greenyellow;
+            background-color: green;
+        }
+
+        .box.lose {
+            border: 3px solid rgb(222, 145, 145);
+            background-color: red;
+        }
+
+        .box.tie {
+            border: 3px solid rgb(101, 127, 223);
+            background-color: rgb(7, 68, 212);
+            
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h1>Me</h1>
+            <div id="box-me">...</div>
+            <h3 id="result-me">...</h3>
+        </div>
+        <div class="box">
+            <h1>Computer</h1>
+            <div id="box-computer">...</div>
+            <h3 id="result-computer">...</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <button id="btn-play" onclick="play()">Play</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        
+        let userRandomArr = [];
+        let computerRandomArr = [];
+        
+        
+        // 1. 유저가 Play 버튼을 누른다.
+        function play(){
+            let data = ["가위","바위","보"];
+            
+            // 2. 유저와 컴퓨터는 랜덤으로 가위[0], 바위[1], 보[2]를 출력한다.
+            let userIdx = parseInt(Math.random() * 3);
+            let computerIdx = parseInt(Math.random() * 3);
+            
+            const boxMe = document.getElementById("box-me");
+            const boxComputer = document.getElementById("box-computer");
+            const resultMe = document.getElementById("result-me");
+            const resultComputer = document.getElementById("result-computer");
+
+            // 3. 유저와 컴퓨터의 값을 비교하여 출력한다.
+            const userChoice = data[userIdx];
+            const computerChoice = data[computerIdx];
+            const result = getResult(userChoice, computerChoice);
+            
+            //   3-1. 승패에 따라 win, lose 를 출력
+            //   3-2. 비긴 경우, tie 출력
+
+            // 이미지 출력
+            boxMe.innerHTML = `<img class="box-img" src="./img/${getImgName(userChoice)}.png">`;
+            boxComputer.innerHTML = `<img class="box-img" src="./img/${getImgName(computerChoice)}.png">`;
+
+            //결과 출력
+            resultMe.textContent = getResult(result, "User");
+            resultComputer.textContent = getResult(result, "Computer");
+
+            // 4. 승패에 따라 테두리가 다르게 출력한다. ( HTML객체.style.border 활용 ) 
+            // 4-1. 이긴 경우, 초록색 테두리
+            //   4-2. 진 경우, 빨간색 테두리
+            //   4-3. 비긴 경우, 검정색 테두리 
+            // 테두리 스타일 설정
+            // boxMe.parentNode.setAttribute("class", `box ${result}`);
+            // boxComputer.parentNode.setAttribute("class", `box ${result}`);
+            if(result === "win"){
+                boxMe.parentNode.classList.add("win");
+                boxComputer.parentNode.classList.add("lose");
+            }else if(result === "lose"){
+                boxMe.parentNode.classList.add("win");
+                boxComputer.parentNode.classList.add("win");
+            }else{
+                boxMe.parentNode.classList.add("tie");
+                boxComputer.parentNode.classList.add("tie");
+            }
+        }
+
+
+        // 이미지 이름 반환
+        let getImgName = function(choice){
+            switch(choice){
+                case "가위":
+                    return "scissors";
+                case "바위":
+                    return "rock";
+                case "보":
+                    return "paper";
+                default:
+                    return "";
+            }
+        }
+
+        //결과 반환
+         function getResult(userChoice, computerChoice)  {
+            if(userChoice === computerChoice ){
+                return "tie";
+            }else if(
+                (userChoice === "바위"  && computerChoice === "가위") ||
+                (userChoice === "가위"  && computerChoice === "보") ||
+                (userChoice === "보" && computerChoice === "바위")
+            ){
+                return "win.";
+            }else{
+                return "lose";
+             }
+         }
+
+
+        //결과 메시지 반환
+        function getResultMessage(result, player){
+            switch(result){
+                case "win":
+                    return `${player} ${result}`;
+                case "lose":
+                    return `${player} ${result}`;
+                case "tie":
+                    return `${player} ${result}`;                   
+                default:
+                    return "";
+            }
+        }
+
+        //태그속성 추가할때 사용하는ㅁ ㅔ소드 
+        //클래스 속성값은 한 개 이상 정의할수있다. 
+        //boxs[0].setAttribute("class", `box ${me}`);
+    </script>
+</body>
+
+</html>

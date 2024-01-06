@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //사용자 정의 객체 메소드 
+        let person = {
+            "name" : "임명진",
+            "age" : 20,
+            "gender" : "남자",
+            "favoritFood" : ["김치찌개","제육볶음","계란찜"],
+            //객체 내 속성 접근 this
+            //this 붙이지 않으면 전역변수를 찾음
+            "intro" : function(){
+                console.log(`안녕 ${this.name}`);
+            }
+        }
+        console.log(person);
+
+        //객체 내 데이터 접근법
+        console.log(person.name);
+        console.log(person["name"]);
+        console.log(person.favoritFood[0]);
+
+        //객체 내 매소드 호출
+        person.intro();
+        
+
+
+        
+
+    </script>
+</body>
+</html>

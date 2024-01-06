@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+
+    <style>
+        *{
+            text-align: center;;
+        }
+
+        div{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>◖⚆ᴥ⚆◗</h1>
+    
+    <div>
+        <h1>평점 : 
+            <span id="like">0</span>
+            <br>
+            <button onclick="plus()">+1 증가 
+                <h2>ദ്ദി*ˊᗜˋ*) 좋아요</h2>
+            </button>
+            <button onclick="minus()">-1 감소 
+                <h2>୧(๑•̀ᗝ•́)૭ 싫어요</h2>
+            </button>
+            <br>
+        </h1>
+    </div>
+
+
+    <script>
+        // ++1
+        let plus = function(){
+            const like = document.getElementById("like");
+            like.innerText = parseInt(like.innerText)+1;
+            like.style.color="red";
+        } 
+
+        // --1
+        let minus = function(){
+            const like = document.getElementById("like");
+            //0이 아닐때만 --1
+            if(like != 0){
+                like.innerText = parseInt(like.innerText)-1;
+                like.style.color="blue";
+            }
+        }
+
+
+    </script>
+</body>
+</html>
+
+

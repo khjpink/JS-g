@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arr = [1,2,3,4,5,6,7,8,9]
+
+        let hole = [];
+
+        let cnt = 0;
+
+        //홀수만 구하기
+        for(let i=0; i<arr.length; i++){
+            //홀수라면
+            if(arr[i]%2==1){
+                //홀수인덱스를, 홀i에 담기
+                hole[i] = arr[i]
+                console.log(hole[i]);
+                cnt++;
+            }
+            
+        }
+        console.log("홀수 배열길이 : ", cnt);
+
+    </script>
+</body>
+</html>

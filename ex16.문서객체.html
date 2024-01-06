@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id ="msg1">날씨 흐림</h1>
+    <h1 id ="msg2">날씨 흐림</h1>
+
+    <!-- 이 원리가 뭐지? p태그 내용은 콘솔에 안나옴-->
+    <p id="msg3">
+        배고프다
+        <p>
+            밥밥밥 냠냠
+        </p>
+    </p>
+
+    <script>
+
+        const msg1 = document.getElementById("msg1");
+        const msg2 = document.getElementById("msg2");
+
+        console.log("접근한 객체 : "+msg1);
+        console.log(msg1);
+        console.log(msg1.innerText);
+        console.log(msg1.innerHTML);
+
+        msg1.innerText = "<a href='#'>맑음 흐림</a>";
+        msg2.innerHTML = "<a href='#'>졸려요</a>";
+
+        console.log(msg3.innerText);
+        console.log(msg3.innerHTML);
+
+
+    </script>
+</body>
+</html>
+
+

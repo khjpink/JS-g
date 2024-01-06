@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>h1태그</h1>
+    <h1 id=""tit>h1태그2</h1>
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>
+
+        // 제이뤄리는 태그를 넣으면 선택자로 인식
+        //document.getElementsByTagName("h1");
+        const $h1Tag = $("h1"); 
+        console.log($h1Tag)
+
+        //아이디를 넣어도 된다. 
+        const $h1Tag2 = $("#tit"); 
+        console.log($h1Tag2)
+
+        //h1태그 접근
+        // document.getElementById("$h1Tag").innerText
+        // document.getElementById("$h1Tag").innerHTML
+        console.log($h1Tag.text());
+        console.log($h1Tag.html());
+        
+        //h1태그 내용 변경
+        $h1Tag.text("변경성공!");
+        //$h1Tag2.text("<a href='#'>변경성공!</a>");
+
+        //h1태그 스타일변경 , 키벨류객체처럼 넣기
+        $h1Tag.css({
+            color :"green",
+            backgroundColor:"pink",
+        });
+
+        //h1태그 이벤트 적용
+        $h1Tag.on("click", function(){
+            alert("안녕")
+        });
+    </script>
+</body>
+</html>

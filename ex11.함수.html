@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //지역변수를 밖에서 호출하면 오류남
+        // console.log(msg); 
+
+        //전역변수 선언,초기화
+        let msg2 = "Hello!";
+
+        //1.함수선언식
+        function intro(){
+            console.log("intro()함수가 실행되었습니다!");
+            
+            //지역변수 선언,초기화
+            let msg = "function!";
+            console.log(msg);
+            //전역변수는 안에서 호출하면 오류안남
+            console.log(msg2);
+        }
+        intro();
+
+
+        //2.함수표현식 = 익명함수
+        let intro2 = function(){
+            console.log("함수표현식 실행!");
+        }
+        intro2();
+
+        //3.화살표함수
+        let intro3 = () => {
+            console.log("화살표함수 실행!");
+        };
+        intro3();
+
+
+
+    </script>
+</body>
+</html>

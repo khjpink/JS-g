@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id ="tit">이벤트 실습</h1>
+    <h2 id ="tit">클릭해볼까요</h2>
+    <p id="link-text"></p>
+    <p id="list"></p>
+
+    <!-- 폼태그에서 클릭하려면 input을 쓰고 아니라면 button을 사용한다 -->
+    <button onclick="h1Change()">클릭</button>
+    <button onclick="createLink()">링크생성</button>
+    <button onclick="createList()">목록생성</button>
+
+    <script>
+        let h1Change = function(){
+            const tit = document.getElementById("tit");
+            tit.innerText = "변경완료!";
+            tit.style.color="blue";
+            tit.style.backgroundColor="aqua";
+            tit.style.border = "1px solid blue";
+        }
+
+        let createLink = function(){
+            const linkText = document.getElementById("link-text");
+            linkText.innerHTML = "<a href='https://www.naver.com/'>네이버이동</a>";;
+        }
+
+        // let createList = function(){
+        //     const list = document.getElementById("list");
+            // list.innerHTML = `
+            //                 <ul>            
+            //                     <li>HTML</li>
+            //                     <li>CSS</li>
+            //                     <li>JavaScript</li>
+            //                 </ul>
+            // `;
+        // }
+
+        //반복문으로 태그 생성
+        let createList = function(){
+            const list = document.getElementById("list");
+
+            let arr = ["HTML","CSS","JavaScript"];
+
+            let resultHTML = "<ul>";
+            for(let i=0; i<arr.length; i++){
+                resultHTML += `<li>${arr[i]}</li>`;
+            }
+            resultHTML += "</ul>";
+
+            list.innerHTML += resultHTML;
+        }
+    </script>
+</body>
+</html>
+
+

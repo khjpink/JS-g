@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      let fruits = ["apple", "avocado", "banana", "blueberry", "cherry", "dragon fruit", 
+                    "fig", "grape", "kiwi", "lime", "mango", "orange", "oriental melon", "pear",
+                        "peach", "pineapple", "shine muscat", "strawberry", "tomato", 
+                    "water melon", "yuja"];
+      console.log("문제 : ",fruits);
+                    
+    //1.마지막 아이템 삭제하기
+    fruits.pop(fruits);
+    console.log("yuja삭제 : ",fruits);
+
+    //2.추가하기
+    fruits.push("grapefruit");
+    console.log("grapefruit추가 : ",fruits);
+
+
+    //3.추가추가
+    fruits.push("cherry tomato",'pine nut','korean blackberry');
+    console.log("cherry tomato, pine nut, korean blackberry 추가 : ",fruits);
+
+    //4.찾기
+    let isCheck = fruits.includes("orange");
+    console.log("orange가 있나요? : ",isCheck);
+
+    //5.찾기
+    let isCheck2 = fruits.includes("kiwi");
+    console.log("kiwi가 있나요? : ",isCheck2);
+
+
+    //6.값 변경
+    // 6-1. 
+    console.log("water melon의 인덱스 찾기")
+    let index = fruits.indexOf("water melon");
+    console.log("데이터 water melon의 인덱스 위치 : ",index);
+
+    // 6-2 값 변경하기    
+    fruits[index] = ["melon"];
+    console.log("water melon을 melone으로 변경 : ", fruits) ;
+
+    //6-3 변경 확인
+    console.log("값 변경됐는지 확인")
+    let index2 = fruits.indexOf("melon");
+    console.log("데이터 melon의 인덱스 위치 : ",index);
+
+    //7.기존 배열 삭제
+    //7-1 인덱스 찾기
+    let index3 = fruits.indexOf("lime")
+    console.log("데이터 lime의 인덱스 위치 :",index3);
+    //7-2 
+    fruits.splice(index3,4);
+    console.log("lime부터 3개 아이템 기존 배열에서 삭제 : ",fruits)
+
+    //8.이후 값 제거
+    //8-1 인덱스 찾기
+    let index4 = fruits.indexOf("shine muscat");
+    console.log("데이터 shine muscat의 인덱스 위치 : ",index4);
+    //8-2
+    fruits.splice(index4);
+    console.log("shine muscat이후의 값 제거 : ",fruits);
+
+    //9.새로운 배열 저장
+    //9-1 인덱스 찾기
+    let index5 = fruits.indexOf("pear");
+    console.log("데이터 pear의 인덱스 위치 : ",index5);
+    let index6 = fruits.indexOf("pineapple");
+    console.log("데이터 pineapple의 인덱스 위치 : ",index6);
+    //9-2 잘라내기
+    let new_arr = fruits.slice(index5,index6+1);
+    console.log("잘라내기 : ",new_arr);
+    
+
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let isChange = confirm("비밀번호를 변경하시겠습니까?")
+       
+       //if(isChange === true) 라고 써야하는거 아닌가?
+       //애초에 confirm이 t,f결과값을 반환하고, if는 t일때 동작하는거다. t 조건이나, t값을 적으면 된다. 
+       if(isChange){
+            console.log("비밀번호 변경 완료")
+       }else{
+            console.log("변경할 비밀번호 다시 입력")
+       }
+
+    </script>
+</body>
+</html>

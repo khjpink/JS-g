@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //가장 큰 수 
+        let arr = [23,54,77,14,44];
+        // let maxNum = Math.max.apply(null,arr);
+        // console.log("가장큰수 : ",maxNum);
+        
+        //반복문으로 가장큰수 구하기
+
+        //담을 배열
+        let maxNum2 = arr[0];
+        for(let i=0; i<arr.length; i++){
+            //arr값이 max보다 크다면?
+            if(arr[i] > maxNum2){
+                //그값을 max에 담아줘
+                maxNum2 = arr[i];
+            }
+        }
+        console.log("가장 큰 수는 : ",maxNum2);
+
+
+    </script>
+</body>
+</html>

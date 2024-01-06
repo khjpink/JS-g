@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>로그인 폼</p>
+    <button id="btnP">p태그 다루기</button>
+    <div id="div1">
+        <h1 class="h">로그인 폼</h1>
+        ID : <input type="text" name=""id><br>
+        PW : <input type="text" name=""pw><br>
+    </div>
+    <p class="h"></p>
+    <button id="btnDiv">div태그 다루기</button>
+    <button id="btnH">H태그 다루기</button>
+    <button id="addAttr">input 태그 다루기</button>
+    <button id="removeAttr">속성지우기</button>
+    <button id="removeP">p태그 지우기</button>
+
+
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script>    
+
+    $btnP.on('click', function(){
+        $('p').text('p태그 클릭')
+    });
+
+
+    </script>
+</body>
+</html>
+

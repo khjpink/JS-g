@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // let ranNum = parseInt(Math.random()*100)+1;
+
+        // 랜덤 숫자 생성 함수
+        // Math.floor : 소수점 이하 제거하고 정수변환
+        // 범위는 100부터 1
+        // Math.random함수가 0이상 1미만의 값을 반환하기 때문 1을 더한다
+        function generateRandomNumber(min, max){
+            // 0 이상 (max - min + 1) 미만의 수를 얻는다.  그 수에 min에더한다.  
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+        //랜덤 배열
+        const randomArr = []
+        const evenArr  = []
+        const oddArr  = []
+
+        for(let i=0; i<10; i++){
+            //1부터100사이의 랜덤숫자 생성
+            const randomNum = generateRandomNumber(1,100);
+            randomArr.push(randomNum);
+            
+            //짝수판단
+            if(randomNum % 2 == 0){
+                evenArr.push(randomNum);
+            //홀수판단
+            }else{
+                oddArr.push(randomNum);
+            }
+        }
+
+        //카운트
+        const evenCnt = evenArr.length;
+        const oddCnt = oddArr.length;
+
+        console.log("랜덤수는 : "+randomArr);
+        console.log("랜덤수 개수는 : "+randomArr.length);
+
+        console.log(`randomArr에 저장된 짝수는 ${evenArr}이고 총 ${evenCnt}입니다.`);
+    
+        console.log("홀수는 : "+oddArr);
+        console.log("홀수의 개수는 "+ oddCnt);
+
+
+    </script>
+</body>
+</html>

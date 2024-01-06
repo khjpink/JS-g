@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>입력요소의 데이터 접근하기</h1>
+    <form action="">
+
+       
+        <input type="text" id="user-input">
+        <input type="button" id="btn" value="출력">
+    </form>
+
+    <p id="mag"></p>
+
+    <script>
+        //입력한 데이터를 가져오기 위해, on이 아니라 객체로 만들어서 해보겠다. 
+
+
+        //1)이벤트 
+        // 웹페이지에서 마우스,스크롤, 키보드 입력 행위
+        //2)이벤트 핸들러 
+        // 이벤트가 감지되었을때 동작하는 함수
+        
+
+        const userInput = document.getElementById("user-input");
+        const btn = document.getElementById("btn");
+        const msg = document.getElementById("msg");
+
+        //미리 만들어진 함수를 호출하는 법
+        let getValue = function(){
+            // input태그 : 끝태그가 없는 단일태그는 userInput이렇게 가져올수가 없다.
+            // .value를 해야 한다 .
+            // 다른방법은 input태그에  value를(값을 입력해서 보여줌) 작성하면 된다.
+            console.log(userInput.value); 
+            msg.innerText = userInput.value;
+        }
+
+        //버튼 객체에 이벤트 적용하는 법
+        //특징 : 1개, 클릭에 대한 이벤트만 적용
+        btn.onclick = function(){ // p547
+        //    console.log("함수실행1");
+        }  
+
+        //특징 : 공통으로 이벤트 적용
+        btn.addEventListener("mouseover", function(){ // p616
+            // console.log("함수실행2");
+        });
+
+        
+        
+
+        //클릭하면 getValue함수를 호출
+        //btn.addEventListener("click", getValue);
+        userInput.addEventListener("change", getValue);
+
+        //이렇게도 작성한다
+        //btn.addEventListener("mouseover", function(){
+        //});
+        
+    </script>
+</body>
+</html>
